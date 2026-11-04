@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=ShockWAVE Kernel By @MrShockWAVEog
+kernel.string=FinELikEWinE_69 Kernel By @suman-1007-cyber
 do.devicecheck=0
 do.modules=0
 do.systemless=1
