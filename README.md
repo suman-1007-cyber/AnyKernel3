@@ -1,3 +1,50 @@
+# AnyKernel3 - FinELikEWinE_69 installer
+
+Flashable installer template for the **FinELikEWinE_69** kernel (Linux 4.19, MediaTek MT6768).
+It is used by the GitHub Actions builder, which copies the freshly built `Image.gz-dtb` into this
+template and zips it:
+
+- Builder: https://github.com/suman-1007-cyber/FinELikEWinE-MT6768-ActioN_69
+- Kernel source: https://github.com/suman-1007-cyber/FinELikEWinE-MT6768-KerneL_69
+
+You normally don't flash this repo directly. Build a zip with the builder and flash that.
+
+## What it does
+
+When you flash the finished zip in recovery, AnyKernel3 unpacks your current boot image, replaces
+only the kernel, and repacks it. Your ROM, ramdisk and vendor stay as they are.
+
+- **Before flashing, make a boot backup** (OrangeFox: Backup -> Boot).
+- Flash in a custom recovery (OrangeFox / TWRP). Reboot to system afterwards.
+
+## Files you may want to edit
+
+| File | What to change |
+|---|---|
+| `anykernel.sh` | `kernel.string` (the name shown while installing) and the credits lines |
+| `banner` | The ASCII art shown at the start of the install |
+| `anykernel.sh` | `device.name1..3` (supported device names) |
+
+**Note:** `do.devicecheck=0` is set, so the zip does **not** check which device it is being flashed on.
+Only flash it on a supported device. Set `do.devicecheck=1` if you want the installer to refuse other devices.
+
+The builder leaves `README.md` and the `.git` folder out of the flashable zip.
+
+## Credits
+
+- **AnyKernel3**: osm0sis @ xda-developers and contributors, https://github.com/osm0sis/AnyKernel3
+- **Installer template**: ShockWAVE Kernel, [@MrShockWAVEog](https://github.com/MrShockWAVEog)
+- **Kernel tree**: @sshprb and @emred_n
+- **GitHub Action**: @Jbub5
+
+## License
+
+See `LICENSE` (the AnyKernel3 license). Keep it when you copy or redistribute this template.
+
+---
+
+## Original AnyKernel3 README (below)
+
 ----------------------------------------------------------------------------------
 AnyKernel3 - Flashable Zip Template for Kernel Releases with Ramdisk Modifications
 ----------------------------------------------------------------------------------
